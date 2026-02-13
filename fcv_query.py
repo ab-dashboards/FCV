@@ -12,12 +12,12 @@ import openai
 # -------------------------------------------------------------------------
 # Configuration Constants
 # -------------------------------------------------------------------------
-BASE_FOLDER   = "download_fcv/Structure Extraction Sample"
-INDEX_PATH    = os.path.join(BASE_FOLDER, "faiss_index.bin")
-META_PATH     = os.path.join(BASE_FOLDER, "metadata_mapping.pkl")
-EMBED_MODEL   = "paraphrase-mpnet-base-v2"
-CHAT_MODEL    = "gpt-4.1-nano-2025-04-14"
-LOG_FILE      = os.path.join(BASE_FOLDER, "fcv_query.log")
+BASE_FOLDER = os.getenv("FCV_BASE_FOLDER", "download_fcv/Structure Extraction Sample")
+INDEX_PATH = os.path.join(BASE_FOLDER, "faiss_index.bin")
+META_PATH = os.path.join(BASE_FOLDER, "metadata_mapping.pkl")
+EMBED_MODEL = os.getenv("FCV_EMBED_MODEL", "paraphrase-mpnet-base-v2")
+CHAT_MODEL = os.getenv("OPENAI_MODEL", "gpt-4.1-nano-2025-04-14")
+LOG_FILE = os.path.join(BASE_FOLDER, "fcv_query.log")
 
 
 # ----------------------------------------------------------------------------
@@ -35,6 +35,8 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # ----------------------------------------------------------------------------
 # Text cleanup patterns
