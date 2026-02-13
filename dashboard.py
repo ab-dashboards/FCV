@@ -4,7 +4,7 @@ from wordcloud import WordCloud
 
 os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
 
-from fcv_se_query2 import (
+from fcv_query2 import (
     load_index_and_metadata,
     embed_query, retrieve_sections,
     extract_and_aggregate,

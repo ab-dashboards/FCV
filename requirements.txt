@@ -1,19 +1,12 @@
-﻿streamlit==1.44.1
-
-# Data handling & Excel I/O
+streamlit==1.44.1
 pandas>=2.2
 numpy>=1.24
 openpyxl>=3.1
-
-# Visualization
+matplotlib>=3.8
 plotly>=6.0
 wordcloud>=1.9
-
-# ML / Embeddings
 scikit-learn>=1.2
 faiss-cpu>=1.7
 sentence-transformers>=2.2
-
-# NLP & OpenAI
 nltk>=3.8
 openai>=1.68
